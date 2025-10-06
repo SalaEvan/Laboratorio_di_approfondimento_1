@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}Risultato calcolo{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-12 col-lg-8">
+    <div class="card shadow-sm mb-3">
+      <div class="card-body">
+        <h3 class="card-title">Dati inseriti</h3>
+        <p class="mb-1">Altezza totale: <strong>{{ total_height }} {{ height_unit }}</strong></p>
+        <p class="mb-0">Lunghezza disponibile: <strong>{{ total_length }} {{ length_unit }}</strong></p>
+        
+      </div>
+    </div>
+
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <h3 class="card-title">Specifiche tecniche</h3>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Numero di gradini: <strong>{{ num_steps }}</strong></li>
+          <li class="list-group-item">Altezza di ogni gradino: <strong>{{ riser_height }} cm</strong></li>
+          <li class="list-group-item">Lunghezza pedata (senza sporgenza): <strong>{{ tread_length }} cm</strong></li>
+          <li class="list-group-item">Sporgenza: <strong>{{ overhang }} cm</strong></li>
+          <li class="list-group-item">Lunghezza pedana (con sporgenza): <strong>{{ tread_with_overhang }} cm</strong></li>
+        </ul>
+        <div class="mt-3 d-flex gap-2">
+          <a class="btn btn-outline-secondary" href="/api/calculation">Calcola di nuovo</a>
+        </div>
+      </div>
+    </div>
+
+    
+  </div>
+</div>
+{% endblock %}

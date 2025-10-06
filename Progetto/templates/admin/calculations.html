@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Statistiche Calcoli{% endblock %}
+
+{% block content %}
+<h1>Calcoli per Utente</h1>
+<div class="mt-2">
+  <a class="btn btn-outline-secondary" href="{{ url_for('default.index') }}">Indietro</a>
+  </div>
+<table class="table table-striped mt-3">
+  <thead>
+    <tr>
+      <th>Utente</th>
+      <th>Numero calcoli</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for row in user_counts %}
+    <tr>
+      <td>{{ row.username }}</td>
+      <td>{{ row.count }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

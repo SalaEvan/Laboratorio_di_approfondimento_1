@@ -1,0 +1,21 @@
+<!-- auth\login.html -->
+{% extends "base.html" %}
+
+{% block title %}Flask Login{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col">
+        <h3>Login</h3>
+        <form method="POST" action="login">
+            <div class="mb-3">
+                <input class="form-control" type="email" name="email" placeholder="Your Email" autofocus="">
+            </div>
+            <div class="mb-3">
+                <input class="form-control" type="password" name="password" placeholder="Your Password">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

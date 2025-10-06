@@ -1,0 +1,76 @@
+@hostname = localhost
+@port = 5000
+@host = {{hostname}}:{{port}}
+
+
+### form get
+GET http://{{host}}/form
+
+### form post
+POST http://{{host}}/form
+
+### get hello
+GET http://{{host}}/hello
+
+### get hello user
+GET http://{{host}}/hello/Evan
+
+### api invert
+GET http://{{host}}/api/invert/Ciao
+
+### api upper
+GET http://{{host}}/api/upper/Prova
+
+### save
+POST http://{{host}}/api/save HTTP/1.1
+Content-Type: application/json
+
+{
+    "dati_da_salvare":"Prova con questo"
+}
+
+### add user
+POST http://{{host}}/adduser HTTP/1.1
+Content-Type: application/json
+
+{
+    "username":"Gabriele",
+    "password":"Admin00$$"
+}
+
+### show all users
+GET http://{{host}}/users
+
+### show user
+GET http://{{host}}/api/user/3
+
+### show user by username
+GET http://{{host}}/api/user/testuser
+
+### get user by id
+GET http://{{host}}/user/id/3
+
+### delete user by id
+DELETE http://{{host}}/user/id/3
+
+### update user by username
+PUT http://{{host}}/user/Gabriele
+Content-Type: application/json
+
+{
+    "username": "GabrieleAggiornato",
+    "password": "NuovaPassword123"
+}
+### aggiungi umore a utente esistente (sostituisci 1 con l'id corretto)
+POST http://{{host}}/user/2/umore
+Content-Type: application/json
+
+{
+    "stato": "triste"
+}
+
+### ottieni umore di utente esistente (sostituisci 1 con l'id corretto)
+GET http://{{host}}/user/1/umore
+
+### ottieni umore di utente NON esistente
+GET http://{{host}}/user/9999/umore
